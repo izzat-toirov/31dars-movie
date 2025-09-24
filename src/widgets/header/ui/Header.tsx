@@ -20,7 +20,7 @@ export const Header = memo(() => {
             </NavLink>
           </div>
           <section className='flex gap-5'>
-            <select id="language" name="language">
+            <select id="language" name="language" className='bg-neutral-900'>
               <option value="rus">Rus</option>
               <option value="uzb">Uzb</option>
             </select>
