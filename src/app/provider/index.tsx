@@ -14,7 +14,7 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
         <Provider store={store}>
           <Suspense fallback={
               <div className="flex items-center justify-center min-h-screen bg-black">
-                <img src={img} alt="Loading..." className="w-16 h-16 animate-pulse" />
+                <img src={img} alt="Loading..." className="w-130 h-130 animate-pulse" />
               </div>}>
             {children}
           </Suspense>
