@@ -6,8 +6,8 @@ import { CiSearch } from 'react-icons/ci';
 export const Header = memo(() => {
   const navigate = useNavigate();
   return (
-    <header>
-      <div className="container">
+    <header className='bg-neutral-900'>
+      <div className="container text-white">
         <div className="flex justify-between py-[22px]">
           <img src={img} alt="" onClick={() => navigate('/')} />
 

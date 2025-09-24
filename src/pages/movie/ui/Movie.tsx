@@ -4,10 +4,13 @@ import { MovieList } from '../../../widgets/movie-list';
 
 export const Movie = memo(() => {
   const {getMovies} = useMovie()
-    const {data} = getMovies()
+    const {data, isLoading} = getMovies()
   return (
     <div className="About">
-      <MovieList movies={data?.results}/>
+      <MovieList
+        movies={data?.results || []}
+        isLoading={isLoading}
+      />
     </div>
   );
 });

@@ -25,7 +25,7 @@ export const MovieInfo: FC<Props> = memo((props) => {
           Link
         </a>
       </section>
-      <section className="flex overflow-x-auto container">
+      <section className="flex overflow-x-auto container mt-5">
         {imageData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (
           <Image
             key={inx}

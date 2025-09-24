@@ -1,22 +1,23 @@
-import { memo, useState, type Key } from 'react'
-
-// import { MovieList } from '../../movie-list';
+import { memo, useState, type Key } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
-
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
+import { useMovie } from "../../../entities/movie";
+import SwiperSkeleton from "./skeleton/SwiperSkeleton";
 
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
-import { useMovie } from '../../../entities/movie';
 
 export const Hero = memo(() => {
   const { getMovies } = useMovie();
-  const { data } = getMovies();
+  const { data, isLoading } = getMovies();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
-  //  console.log(data?.results?.slice(0, 6));
+
+  if (isLoading) {
+    return <SwiperSkeleton />;
+  }
 
   return (
     <div className="container mb-[50px]">
@@ -34,7 +35,7 @@ export const Hero = memo(() => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper2 rounded-xl shadow-lg w-full h-[640px]"
       >
-        {data?.results?.map((movie: { id: Key | null | undefined; backdrop_path: any; title: string | undefined; }) => (
+        {data?.results?.map((movie: { id: Key; backdrop_path: string; title: string }) => (
           <SwiperSlide key={movie.id}>
             <img
               src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
@@ -55,7 +56,7 @@ export const Hero = memo(() => {
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper mt-4 h-20"
       >
-        {data?.results?.map((movie: { id: Key | null | undefined; poster_path: any; title: string | undefined; }) => (
+        {data?.results?.map((movie: { id: Key; poster_path: string; title: string }) => (
           <SwiperSlide key={movie.id}>
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
