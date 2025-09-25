@@ -1,7 +1,9 @@
-import { memo, type FC } from "react";
-import { useMovie } from "../../model/useMovie";
-import { createImageUrl } from "@/shared/utils";
-import { Image } from "antd";
+import { memo, type FC } from 'react';
+import { useMovie } from '../../model/useMovie';
+import { createImageUrl } from '@/shared/utils';
+import { Image } from 'antd';
+import { Link } from 'react-router-dom';
+import { Title } from '../../../../shared/ui/title/Title';
 
 interface Props {
   id: string;
@@ -11,7 +13,7 @@ export const MovieInfo: FC<Props> = memo((props) => {
   const { id } = props;
   const { getMovieById, getMovieInfo } = useMovie();
   const { data } = getMovieById(id);
-  const { data: imageData } = getMovieInfo(id, "images");
+  const { data: imageData } = getMovieInfo(id, 'images');
 
   return (
     <div>
@@ -19,18 +21,16 @@ export const MovieInfo: FC<Props> = memo((props) => {
         className="relative min-h-[900px] flex items-end"
         style={{
           backgroundImage: `url(${createImageUrl(data?.backdrop_path)})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/20" />
 
         <div className="relative z-10 container pb-6 text-white">
           <h1 className="text-4xl font-bold">{data?.title}</h1>
-          {data?.budget && (
-            <p className="mt-2 text-lg">
-              {data.budget.toLocaleString()} USD
-            </p>
+          {data?.budget > 0 && (
+            <p className="mt-2 text-lg">{data.budget.toLocaleString()} USD</p>
           )}
           {data?.homepage && (
             <a
@@ -45,6 +45,15 @@ export const MovieInfo: FC<Props> = memo((props) => {
         </div>
       </section>
 
+          <section className='container flex py-10 gap-6'>
+            <div className="w-[360px]">
+              <img src={createImageUrl(data?.poster_path)} alt="" />
+            </div>
+            <div className='flex-1'>
+              <p>{data?.overview}</p>
+            </div>
+          </section>
+
       <section className="flex overflow-x-auto gap-3 container mt-6 pb-4">
         {imageData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (
           <Image
@@ -54,6 +63,14 @@ export const MovieInfo: FC<Props> = memo((props) => {
             alt=""
           />
         ))}
+      </section>
+      <section className="container mt-10">
+        <Title>Tabs</Title>
+        <div className="flex gap-4">
+          <Link to={''}>Review</Link>
+          <Link to={'cast'}>Cast</Link>
+          <Link to={'other'}>Others</Link>
+        </div>
       </section>
     </div>
   );
