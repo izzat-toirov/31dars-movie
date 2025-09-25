@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 
 .container{
     max-width: 1204px;
@@ -10,3 +10,93 @@
     padding-left: 12px;
     padding-right: 12px;
 }
+
+
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    gap: 8px; /* Elementlar orasidagi masofa */
+  }
+  
+  .custom-pagination .ant-pagination-item {
+    background-color: #2d3748; /* Neytral quyuq fon */
+    border: none; /* Chegara olib tashlandi */
+    border-radius: 6px; /* Yumshoq burchaklar */
+    min-width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .custom-pagination .ant-pagination-item a {
+    color: #f3f4f6; /* Oq rangga yaqin tekst */
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .custom-pagination .ant-pagination-item:hover {
+    background-color: #4b5563; /* Hoverda yorqinroq */
+  }
+  
+  .custom-pagination .ant-pagination-item-active {
+    background-color: #2563eb; /* Faol sahifa uchun ko'k */
+  }
+  
+  .custom-pagination .ant-pagination-item-active a {
+    color: #ffffff;
+  }
+  
+  .custom-pagination .ant-pagination-prev,
+  .custom-pagination .ant-pagination-next {
+    background-color: #2d3748;
+    border: none;
+    border-radius: 6px;
+    min-width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custom-pagination .ant-pagination-prev .ant-pagination-item-link,
+  .custom-pagination .ant-pagination-next .ant-pagination-item-link {
+    color: #f3f4f6;
+    font-size: 14px;
+    background: transparent;
+    border: none;
+  }
+  
+  .custom-pagination .ant-pagination-prev:hover,
+  .custom-pagination .ant-pagination-next:hover {
+    background-color: #4b5563;
+  }
+  
+  .custom-pagination .ant-pagination-prev:hover .ant-pagination-item-link,
+  .custom-pagination .ant-pagination-next:hover .ant-pagination-item-link {
+    color: #ffffff;
+  }
+  
+  .custom-pagination .ant-pagination-disabled .ant-pagination-item-link {
+    color: #6b7280;
+    cursor: not-allowed;
+  }
+  
+  .custom-pagination .ant-pagination-item-ellipsis {
+    color: #9ca3af;
+    line-height: 36px;
+  }
+  
+  @media (max-width: 640px) {
+    .custom-pagination .ant-pagination-item,
+    .custom-pagination .ant-pagination-prev,
+    .custom-pagination .ant-pagination-next {
+      min-width: 32px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 12px;
+    }
+  }
