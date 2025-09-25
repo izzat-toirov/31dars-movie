@@ -1,6 +1,6 @@
 import { MovieInfo, useMovie } from '@/entities/movie';
 import { MovieList } from '@/widgets/movie-list';
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export const MovieDetail = memo(() => {
@@ -9,6 +9,10 @@ export const MovieDetail = memo(() => {
   const { data, isLoading } = getMovieInfo(id as string, 'similar');
   const { data: ReviewData } = getMovieInfo(id as string, 'reviews');
   console.log(ReviewData);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   return (
     <div>

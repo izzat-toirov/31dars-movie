@@ -16,7 +16,7 @@ export const MovieInfo: FC<Props> = memo((props) => {
   return (
     <div>
       <section
-        className="relative min-h-[600px] flex items-end"
+        className="relative min-h-[900px] flex items-end"
         style={{
           backgroundImage: `url(${createImageUrl(data?.backdrop_path)})`,
           backgroundSize: "cover",
