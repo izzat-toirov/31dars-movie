@@ -45,14 +45,56 @@ export const MovieInfo: FC<Props> = memo((props) => {
         </div>
       </section>
 
-          <section className='container flex py-10 gap-6'>
-            <div className="w-[360px]">
-              <img src={createImageUrl(data?.poster_path)} alt="" />
-            </div>
-            <div className='flex-1'>
-              <p>{data?.overview}</p>
-            </div>
-          </section>
+      <section className="container flex flex-col md:flex-row py-10 gap-8">
+        <div className="w-full md:w-[360px] flex-shrink-0">
+          <img
+            src={createImageUrl(data?.poster_path)}
+            alt={data?.title}
+            className="rounded-2xl shadow-lg w-full"
+          />
+        </div>
+        <div className="flex-1 space-y-4">
+          <div>
+            <h1 className="text-3xl font-bold">{data?.title}</h1>
+            {data?.tagline && (
+              <p className="text-lg text-gray-500 italic mt-1">
+                “{data.tagline}”
+              </p>
+            )}
+          </div>
+          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300">
+            <span>📅 {data?.release_date}</span>
+            <span>⏱ {data?.runtime} min</span>
+            <span>🎬 {data?.genres?.map((g: { name: any; }) => g.name).join(', ')}</span>
+          </div>
+          <p className="text-base leading-relaxed text-gray-300">
+            {data?.overview}
+          </p>
+
+          <div className="pt-4 flex flex-wrap gap-3">
+            {data?.homepage && (
+              <a
+                href={data.homepage}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition"
+              >
+                🔗 Official Site
+              </a>
+            )}
+            {data?.imdb_id && (
+              <a
+                href={`https://www.imdb.com/title/${data.imdb_id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-yellow-500 text-black rounded-xl shadow hover:bg-yellow-600 transition"
+              >
+                ⭐ IMDb
+              </a>
+            )}
+          </div>
+        </div>
+      </section>
 
       <section className="flex overflow-x-auto gap-3 container mt-6 pb-4">
         {imageData?.backdrops?.slice(0, 20)?.map((item: any, inx: number) => (

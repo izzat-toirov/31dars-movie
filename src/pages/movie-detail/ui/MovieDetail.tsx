@@ -17,7 +17,7 @@ export const MovieDetail = memo(() => {
   return (
     <div>
       <MovieInfo id={id as string} />
-      <Outlet context={{ ReviewData }}/>
+      <Outlet context={{ ReviewData }} />
 
       <MovieList
         movies={data?.results.slice(0, 4) || []}
