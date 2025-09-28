@@ -8,34 +8,35 @@ import type { MenuProps } from 'antd';
 import { Dropdown, Space } from 'antd';
 import { clearUser } from '../../../features/auth';
 
-const items: MenuProps['items'] = [
-  {
-    key: '1',
-    label: (
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.antgroup.com"
-      >
-        account
-      </a>
-    ),
-  },
-  {
-    key: '2',
-    label: (
-      <button onClick={()=> clearUser()}
-      >
-        Logout
-      </button>
-    ),
-  },
-];3
+
 
 export const Header = memo(() => {
   const navigate = useNavigate();
   const user = useSelector((state: RootState) => state.auth.user);
   const dispatch = useDispatch();
+  const items: MenuProps['items'] = [
+    {
+      key: '1',
+      label: (
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.antgroup.com"
+        >
+          account
+        </a>
+      ),
+    },
+    {
+      key: '2',
+      label: (
+        <button onClick={()=> dispatch(clearUser())}
+        >
+          Logout
+        </button>
+      ),
+    },
+  ];
   return (
     <header className="bg-neutral-900">
       <div className="container text-white">
