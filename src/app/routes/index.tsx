@@ -5,6 +5,7 @@ const Home = lazy(()=> import("@/pages/home"))
 const Movie = lazy(()=> import("@/pages/movie"))
 const BookMark = lazy(()=> import("@/pages/bookmark"))
 const Search = lazy(()=> import("@/pages/Search"))
+const Login = lazy(()=> import("@/pages/login"))
 const MovieDetail = lazy(()=> import("@/pages/movie-detail"))
 const Review = lazy(()=> import("@/pages/movie-detail/review"))
 const Other = lazy(()=> import("@/pages/movie-detail/others"))
@@ -19,6 +20,7 @@ const AppRouter = () => {
       {path: "/movie", element: <Movie/>},
       {path: "/bookMark", element: <BookMark/>},
       {path: "/search", element: <Search/>},
+      {path: "/login", element: <Login/>},
       {path: "/movie/:id", element: <MovieDetail/>, children: [
         {index: true, element: <Review/>},
         {path: "other", element: <Other/>},

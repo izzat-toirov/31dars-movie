@@ -1,0 +1,20 @@
+{
+    "greeting": "Salom dunyo",
+    "header": {
+        "navigation": {
+            "home": "Bosh sahifa",
+            "movies": "Kinolar",
+            "search": "Qidirish"
+        }
+    },
+    "button": {
+        "submit": "yuborish",
+        "cancel": "bekor qilish",
+        "loading": "kutish",
+        "edit": "o'zgartirish",
+        "send": "yuborish",
+        "update": "o'zgartirish",
+        "delete": "o'chirish",
+        "save": "saqlash"
+    }
+}
