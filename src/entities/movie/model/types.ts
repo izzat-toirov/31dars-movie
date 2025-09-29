@@ -19,4 +19,5 @@ export interface IMovieParams {
   page: string;
   sort_by?: string;
   with_genres?: string;
+  primary_release_year?: string;
 }

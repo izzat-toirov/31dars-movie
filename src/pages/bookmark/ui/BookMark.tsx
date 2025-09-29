@@ -7,7 +7,7 @@ export const BookmarkPage = memo(() => {
   const cart = useSelector((state: RootState) => state.cart.value);
 
   return (
-    <div className="p-5">
+    <div className="p-5 min-h-[64.3vh]">
       {!cart.length ? (
         <div className="flex flex-col items-center justify-center min-h-[360px] text-center">
           <h2 className="text-2xl font-semibold mb-3">

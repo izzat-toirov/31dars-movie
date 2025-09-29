@@ -43,7 +43,7 @@ export const MovieCard: FC<Props> = memo(({ movie, isLoading }) => {
         )}
 
         {movie.release_date && (
-          <strong className="absolute left-2 bottom-2 bg-red-500 text-white rounded-xl px-2">
+          <strong className="absolute left-2 bottom-100 bg-red-500 text-white rounded-xl px-2">
             {movie.release_date.split('-')[0]}
           </strong>
         )}

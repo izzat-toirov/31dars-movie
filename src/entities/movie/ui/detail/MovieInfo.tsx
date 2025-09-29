@@ -2,8 +2,9 @@ import { memo, type FC } from 'react';
 import { useMovie } from '../../model/useMovie';
 import { createImageUrl } from '@/shared/utils';
 import { Image } from 'antd';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Title } from '../../../../shared/ui/title/Title';
+import { NavLink } from "react-router-dom";
 
 interface Props {
   id: string;
@@ -65,7 +66,9 @@ export const MovieInfo: FC<Props> = memo((props) => {
           <div className="flex flex-wrap items-center gap-4 text-sm text-gray-300">
             <span>📅 {data?.release_date}</span>
             <span>⏱ {data?.runtime} min</span>
-            <span>🎬 {data?.genres?.map((g: { name: any; }) => g.name).join(', ')}</span>
+            <span>
+              🎬 {data?.genres?.map((g: { name: any }) => g.name).join(', ')}
+            </span>
           </div>
           <p className="text-base leading-relaxed text-gray-300">
             {data?.overview}
@@ -106,12 +109,48 @@ export const MovieInfo: FC<Props> = memo((props) => {
           />
         ))}
       </section>
-      <section className="container mt-10">
+      <section className="container mt-10 mb-5">
         <Title>Tabs</Title>
-        <div className="flex gap-4">
-          <Link to={''}>Review</Link>
-          <Link to={'cast'}>Cast</Link>
-          <Link to={'other'}>Others</Link>
+        <div className="flex gap-6  border-gray-300">
+          <NavLink
+            to=""
+            end
+            className={({ isActive }) =>
+              `pb-2 transition ${
+                isActive
+                  ? 'border-b-2 border-red-500 text-red-500 font-semibold'
+                  : 'text-gray-600 hover:text-red-500'
+              }`
+            }
+          >
+            Review
+          </NavLink>
+
+          <NavLink
+            to="cast"
+            className={({ isActive }) =>
+              `pb-2 transition ${
+                isActive
+                  ? 'border-b-2 border-red-500 text-red-500 font-semibold'
+                  : 'text-gray-600 hover:text-red-500'
+              }`
+            }
+          >
+            Cast
+          </NavLink>
+
+          <NavLink
+            to="other"
+            className={({ isActive }) =>
+              `pb-2 transition ${
+                isActive
+                  ? 'border-b-2 border-red-500 text-red-500 font-semibold'
+                  : 'text-gray-600 hover:text-red-500'
+              }`
+            }
+          >
+            Others
+          </NavLink>
         </div>
       </section>
     </div>

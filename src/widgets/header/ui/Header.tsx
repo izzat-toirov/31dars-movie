@@ -16,18 +16,6 @@ export const Header = memo(() => {
   const dispatch = useDispatch();
   const items: MenuProps['items'] = [
     {
-      key: '1',
-      label: (
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.antgroup.com"
-        >
-          account
-        </a>
-      ),
-    },
-    {
       key: '2',
       label: (
         <button onClick={()=> dispatch(clearUser())}
@@ -50,16 +38,6 @@ export const Header = memo(() => {
               <option value="uzb">Uzb</option>
             </select>
 
-            {/* {user ? (
-              <img src={user.picture} alt="" className="size-10 rounded-full" />
-            ) : (
-              <button
-                className="bg-[#C61F1F] rounded-xl py-[16px] px-[64px]"
-                onClick={() => navigate('/login')}
-              >
-                Kirish
-              </button>
-            )} */}
 
             {user ? (
               <Space direction="vertical">
