@@ -1,1 +1,1 @@
-export {BookMark as default} from "./ui/BookMark"
+export {BookmarkPage as default} from "./ui/BookMark"

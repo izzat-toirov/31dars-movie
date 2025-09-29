@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import type { RootState } from "@/app/store";
 import { MovieList } from "@/widgets/movie-list";
+import { memo } from "react";
 
-const BookmarkPage = () => {
+export const BookmarkPage = memo(() => {
   const cart = useSelector((state: RootState) => state.cart.value);
 
   return (
@@ -26,6 +27,5 @@ const BookmarkPage = () => {
       )}
     </div>
   );
-};
+});
 
-export default BookmarkPage;
