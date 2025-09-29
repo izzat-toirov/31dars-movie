@@ -10,7 +10,7 @@ interface IMoviesState {
 }
 
 const initialState: IMoviesState = {
-  value: JSON.parse(localStorage.getItem("cart") || "[]"),
+  value: JSON.parse(localStorage.getItem("cart") || "[]")
 };
 
 export const cartSlice = createSlice({
@@ -26,13 +26,13 @@ export const cartSlice = createSlice({
         state.value.push({ ...action.payload, quantity: 1 });
       }
 
-      localStorage.setItem("cart", JSON.stringify(state.value));
+      if (typeof window !== "undefined") {
+        localStorage.setItem("cart", JSON.stringify(state.value));
+      }
     }
   }
 });
 
-export const {
-  toggleCart,
-} = cartSlice.actions;
+export const { toggleCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

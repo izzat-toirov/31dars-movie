@@ -35,14 +35,18 @@ export const MovieCard: FC<Props> = memo(({ movie, isLoading }) => {
         <h3 className="line-clamp-1 font-medium text-2xl" title={movie.title}>
           {movie.title}
         </h3>
+
         {movie.vote_average !== 0 && (
           <p className="text-sm text-gray-500 mt-1">
-            ⭐ {movie.vote_average.toFixed(1)}
+            ⭐ {movie.vote_average}
           </p>
         )}
-        <strong className="absolute left-2 bottom-102 bg-red-500 rounded-xl px-2">
-          {movie.release_date.split('-')[0]}
-        </strong>
+
+        {movie.release_date && (
+          <strong className="absolute left-2 bottom-2 bg-red-500 text-white rounded-xl px-2">
+            {movie.release_date.split('-')[0]}
+          </strong>
+        )}
 
         <button
           onClick={(e) => {
@@ -62,4 +66,3 @@ export const MovieCard: FC<Props> = memo(({ movie, isLoading }) => {
   );
 });
 
-export default MovieCard;
