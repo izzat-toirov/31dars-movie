@@ -1,20 +1,51 @@
 {
-    "greeting": "Hello world",
-    "header": {
-        "navigation": {
-            "home": "Home",
-            "movies": "Movies",
-            "search": "Search"
-        }
-    },
-    "button":{
-        "submit": "submit",
-        "cancel": "cancel",
-        "loading": "loading",
-        "edit": "edit",
-        "send": "send",
-        "update": "update",
-        "delete": "delete",
-        "save": "save"
+  "greeting": "Hello world",
+  "header": {
+    "navigation": {
+      "home": "Home",
+      "movies": "Movies",
+      "search": "Search",
+      "bookmark": "Bookmark"
     }
+  },
+  "footer": {
+    "about": {
+      "title": "About us",
+      "offer": "Public offer",
+      "ads": "Advertisement",
+      "faq": "F.A.Q",
+      "contacts": "Contacts"
+    },
+    "categories": {
+      "title": "Categories",
+      "cinema": "Cinema",
+      "theatre": "Theatre",
+      "concerts": "Concerts",
+      "sports": "Sports"
+    },
+    "contact": {
+      "title": "Contact us",
+      "phone": "+998 (95) 897-33-38",
+      "social": "Social networks"
+    }
+  },
+   "sort": {
+    "placeholder": "Sort by",
+    "titleAZ": "Title A-Z",
+    "titleZA": "Title Z-A",
+    "popularityAsc": "Popularity ↑",
+    "popularityDesc": "Popularity ↓",
+    "revenueAsc": "Revenue ↑",
+    "revenueDesc": "Revenue ↓",
+    "releaseDateAsc": "Release date ↑",
+    "releaseDateDesc": "Release date ↓",
+    "voteAverageAsc": "Average rating ↑",
+    "voteAverageDesc": "Average rating ↓",
+    "voteCountAsc": "Vote count ↑",
+    "voteCountDesc": "Vote count ↓"
+  },
+"category": {
+  "placeholder": "All categories",
+  "all": "All categories"
+}  
 }

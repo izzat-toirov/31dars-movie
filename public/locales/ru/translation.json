@@ -1,20 +1,52 @@
 {
-    "greeting": "Privet mir",
-    "header": {
-        "navigation": {
-            "home": "Home ru",
-            "movies": "Movies ru",
-            "search": "Search ru"
-        }
-    },
-    "button":{
-        "submit": "submit",
-        "cancel": "cancel",
-        "loading": "loading",
-        "edit": "edit",
-        "send": "send",
-        "update": "update",
-        "delete": "delete",
-        "save": "save"
+  "greeting": "Привет мир",
+  "header": {
+    "navigation": {
+      "home": "Главная",
+      "movies": "Фильмы",
+      "search": "Поиск",
+      "bookmark": "Закладки"
     }
+  },
+  "footer": {
+    "about": {
+      "title": "О нас",
+      "offer": "Публичная оферта",
+      "ads": "Реклама",
+      "faq": "Вопросы и ответы",
+      "contacts": "Контакты"
+    },
+    "categories": {
+      "title": "Категории",
+      "cinema": "Кино",
+      "theatre": "Театр",
+      "concerts": "Концерты",
+      "sports": "Спорт"
+    },
+    "contact": {
+      "title": "Связаться с нами",
+      "phone": "+998 (95) 897-33-38",
+      "social": "Социальные сети"
+    }
+  },
+  "sort": {
+    "placeholder": "Сортировать по",
+    "titleAZ": "Название A-Я",
+    "titleZA": "Название Я-A",
+    "popularityAsc": "Популярность ↑",
+    "popularityDesc": "Популярность ↓",
+    "revenueAsc": "Доход ↑",
+    "revenueDesc": "Доход ↓",
+    "releaseDateAsc": "Дата выхода ↑",
+    "releaseDateDesc": "Дата выхода ↓",
+    "voteAverageAsc": "Средняя оценка ↑",
+    "voteAverageDesc": "Средняя оценка ↓",
+    "voteCountAsc": "Количество голосов ↑",
+    "voteCountDesc": "Количество голосов ↓"
+  },
+
+  "category": {
+    "placeholder": "Все категории",
+    "all": "Все категории"
+  }
 }

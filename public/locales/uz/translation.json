@@ -1,20 +1,51 @@
 {
-    "greeting": "Salom dunyo",
-    "header": {
-        "navigation": {
-            "home": "Bosh sahifa",
-            "movies": "Kinolar",
-            "search": "Qidirish"
-        }
-    },
-    "button": {
-        "submit": "yuborish",
-        "cancel": "bekor qilish",
-        "loading": "kutish",
-        "edit": "o'zgartirish",
-        "send": "yuborish",
-        "update": "o'zgartirish",
-        "delete": "o'chirish",
-        "save": "saqlash"
+  "greeting": "Salom dunyo",
+  "header": {
+    "navigation": {
+      "home": "Bosh sahifa",
+      "movies": "Kinolar",
+      "search": "Qidiruv",
+      "bookmark": "Saqlanganlar"
     }
+  },
+  "footer": {
+    "about": {
+      "title": "Biz haqimizda",
+      "offer": "Ommaviy oferta",
+      "ads": "Reklama",
+      "faq": "Savol-javoblar",
+      "contacts": "Aloqa"
+    },
+    "categories": {
+      "title": "Kategoriyalar",
+      "cinema": "Kino",
+      "theatre": "Teatr",
+      "concerts": "Konsertlar",
+      "sports": "Sport"
+    },
+    "contact": {
+      "title": "Biz bilan bog‘lanish",
+      "phone": "+998 (95) 897-33-38",
+      "social": "Ijtimoiy tarmoqlar"
+    }
+  },
+  "sort": {
+    "placeholder": "Saralash",
+    "titleAZ": "Sarlavha A-Z",
+    "titleZA": "Sarlavha Z-A",
+    "popularityAsc": "Ommaboplik ↑",
+    "popularityDesc": "Ommaboplik ↓",
+    "revenueAsc": "Daromad ↑",
+    "revenueDesc": "Daromad ↓",
+    "releaseDateAsc": "Chiqish sanasi ↑",
+    "releaseDateDesc": "Chiqish sanasi ↓",
+    "voteAverageAsc": "O‘rtacha baho ↑",
+    "voteAverageDesc": "O‘rtacha baho ↓",
+    "voteCountAsc": "Ovozlar soni ↑",
+    "voteCountDesc": "Ovozlar soni ↓"
+  },
+  "category": {
+  "placeholder": "Barcha kategoriyalar",
+  "all": "Barcha kategoriyalar"
+}
 }
